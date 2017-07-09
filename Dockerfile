@@ -8,6 +8,6 @@ RUN mkdir -p /tmp/download && \
  mv /tmp/download/docker/docker* /usr/local/bin/ && \
  rm -rf /tmp/download
  
-RUN usermod -a -G staff jenkins
+RUN usermod -aG staff jenkins
 
 USER jenkins
