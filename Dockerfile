@@ -11,15 +11,6 @@ RUN mkdir -p /tmp/download && \
 # RUN groupadd docker
 # RUN usermod -aG docker jenkins
 
-
-ENV JENKINS_HOME /var/jenkins_home
-ARG user=jenkins
-ARG group=jenkins
-ARG uid=1000
-ARG gid=1000
-
-RUN useradd -d "$JENKINS_HOME" -u ${uid} -g ${gid} -m -s /bin/bash ${user}
-
 RUN groupadd docker && gpasswd -a jenkins docker
 
 
