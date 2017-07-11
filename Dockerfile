@@ -11,6 +11,13 @@ RUN mkdir -p /tmp/download && \
 # RUN groupadd docker
 # RUN usermod -aG docker jenkins
 
+
+ENV JENKINS_HOME /var/jenkins_home
+ARG user=jenkins
+ARG group=jenkins
+ARG uid=1000
+ARG gid=1000
+
 RUN groupadd -g ${gid} ${group} \
     && useradd -d "$JENKINS_HOME" -u ${uid} -g ${gid} -m -s /bin/bash ${user}
 
